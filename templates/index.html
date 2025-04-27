@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="content">
+        <h1>Spam Detection in Email Using Machine Learning</h1>
+        
+        <form action="/predict" method="POST" class="form-container">
+            <label for="email_text">Enter the content of your E-mail</label><br>
+            <textarea id="email_text" name="email_text" placeholder="Paste your content here..." required></textarea><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result-box">
+            <h2>Result:</h2>
+            <p>{{ prediction_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Spam Detection System © 2025-sultan sarızeybek</p>
+    </footer>
+
+</body>
+</html>
