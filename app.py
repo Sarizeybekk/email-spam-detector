@@ -24,8 +24,7 @@ def predict():
         
 
         prediction = model.predict(transformed_text)
-        
-    
+
         result = "Spam" if prediction[0] == 1 else "Ham (Normal)"
 
         return render_template('index.html', prediction_text=f'Tahmin: {result}')
